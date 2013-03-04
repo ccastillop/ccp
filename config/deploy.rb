@@ -9,7 +9,7 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
-server "cristiancastillo.com", :web, :app, :db, primary: true
+server "www.cristiancastillo.com", :web, :app, :db, primary: true
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
@@ -37,6 +37,7 @@ namespace :deploy do
     run "touch #{shared_path}/db/production.sqlite3"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
+    sudo "service nginx restart"
   end
 
   task :symlink_config, roles: :app do
