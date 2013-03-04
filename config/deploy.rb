@@ -29,15 +29,21 @@ after "deploy:finalize_update", "deploy:symlink_config"
 before "deploy", "deploy:check_revision"
 
 namespace :deploy do
+
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     run "mkdir -p #{shared_path}/config"
+    run "mkdir -p #{shared_path}/db"
+    run "touch #{shared_path}/db/production.sqlite3"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
   end
+
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
   end
+
   desc "Make sure local git is in sync with remote."
   task :check_revision, roles: :web do
     unless `git rev-parse HEAD` == `git rev-parse origin/master`
@@ -46,4 +52,5 @@ namespace :deploy do
       exit
     end
   end
+
 end
