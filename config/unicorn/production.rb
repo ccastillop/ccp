@@ -20,8 +20,8 @@ working_directory app_path
 # Should be 'production' by default, otherwise use other env 
 rails_env = ENV['RAILS_ENV'] || 'production'
 
-stderr_path "#{app_path}/log/unicorn.err.log"
-stdout_path "#{app_path}/log/unicorn.out.log"
+stderr_path "#{app_path}/log/unicorn.log"
+stdout_path "#{app_path}/log/unicorn.log"
 
 # Set master PID location
 pid "#{app_path}/tmp/pids/unicorn.pid"

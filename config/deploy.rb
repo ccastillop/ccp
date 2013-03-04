@@ -22,8 +22,6 @@ require "rvm/capistrano"
 before 'deploy:setup', 'rvm:install_rvm'   # install RVM
 before 'deploy:setup', 'rvm:install_ruby'
 
-after 'deploy:restart', 'unicorn:reload' # app IS NOT preloaded
-after 'deploy:restart', 'unicorn:restart'  # app preloaded
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 after "deploy:setup", "deploy:setup_config"
