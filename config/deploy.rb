@@ -16,10 +16,12 @@ ssh_options[:forward_agent] = true
 set :rvm_ruby_string, "1.9.3"
 set :rvm_install_pkgs, %w[libyaml openssl]
 
+require "bundler/capistrano"
+require 'capistrano-unicorn'
+require "rvm/capistrano"
+
 before 'deploy:setup', 'rvm:install_rvm'   # install RVM
 before 'deploy:setup', 'rvm:install_pkgs'  # install RVM packages before Ruby
-before 'deploy:setup', 'rvm:install_ruby'  # install Ruby and create gemset, or:
-
 after 'deploy:restart', 'unicorn:reload' # app IS NOT preloaded
 after 'deploy:restart', 'unicorn:restart'  # app preloaded
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
@@ -46,8 +48,3 @@ task :check_revision, roles: :web do
   end
 end
 before "deploy", "deploy:check_revision"
-
-
-require "bundler/capistrano"
-require 'capistrano-unicorn'
-require "rvm/capistrano"
