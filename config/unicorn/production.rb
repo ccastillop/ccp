@@ -12,7 +12,7 @@ timeout 180
 listen "/home/ccastillo/apps/ccp/shared/tmp/unicorn.sock"
 
 # Spawn unicorn master worker for user apps (group: apps)
-user 'castillo'
+user 'ccastillo'
 
 # Fill path to your app
 working_directory app_path
