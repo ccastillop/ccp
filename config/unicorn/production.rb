@@ -9,7 +9,7 @@ app_path = "/home/ccastillo/apps/ccp/current"
 worker_processes 2
 preload_app true
 timeout 180
-listen "/home/ccastillo/apps/ccp/shared/tmp/unicorn.sock"
+listen "#{app_path}/tmp/pids/unicorn.sock"
 
 # Spawn unicorn master worker for user apps (group: apps)
 user 'ccastillo'
