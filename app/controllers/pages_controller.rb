@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  http_basic_authenticate_with :name => "cristiam", :password => "dificil1972", :only=>[:create,:update,:delete]
+  http_basic_authenticate_with :name => "cristiam", :password => "dificil1972", :except=>[:show, :index]
   # GET /pages
   # GET /pages.json
   def index
