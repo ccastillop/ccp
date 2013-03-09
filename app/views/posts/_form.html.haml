@@ -1,9 +1,10 @@
 = simple_form_for(@post) do |f|
-  = f.error_notification
+  = render "layouts/error_messages", :target=>@post
 
   .form-inputs
     = f.input :title
     = f.input :body
+    = f.input :parent_id, :collection => Post.select_options
 
   .form-actions
     = f.button :submit

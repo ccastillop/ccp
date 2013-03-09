@@ -20,6 +20,8 @@ gem 'unicorn'
 
 gem 'simple_form'
 
+gem 'ancestry'
+
 group :development, :test do
   gem 'capistrano'
   gem 'rvm-capistrano'
