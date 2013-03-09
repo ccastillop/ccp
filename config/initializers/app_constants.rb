@@ -1,2 +1,2 @@
-SEO_TITLE = "CCP"
-SEO_DESCRIPTION = "CCP"
+SEO_TITLE = "Cristiam Castillo"
+SEO_DESCRIPTION = "Consultoría y desarrollo WEB: Portafolio, hoja de vida, blog"
