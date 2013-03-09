@@ -1,0 +1,26 @@
+%nav.top-bar
+  %ul.title-area
+    %li.name
+      %h1
+        %a{:href => root_path} Cristiam Castillo
+    %li.toggle-topbar.menu-icon
+      %a{:href => "#"}
+        %span Menu
+
+  %section.top-bar-section
+    %ul.left
+      - Post.roots.each do |root|
+        %li.divider
+        %li{class:(root.has_children? ? "has-dropdown" : nil )}
+          = link_to root, root
+          - if root.has_children?
+            %ul.dropdown
+              - root.children.each do |child|
+                %li= link_to child, child
+                
+      %li.divider
+    / Right Nav Section
+    %ul.right
+      %li.divider.hide-for-small
+      %li.has-dropdown
+        %a{:href => "#"} Contacto

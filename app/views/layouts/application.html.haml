@@ -14,61 +14,7 @@
       %title= "CCP | #{SEO_TITLE}"
       %meta{name:"description", content:SEO_DESCRIPTION}
   %body
-
-    %nav.top-bar
-      %ul.title-area
-        %li.name
-          %h1
-            %a{:href => "#"} Cristiam Castillo
-        %li.toggle-topbar.menu-icon
-          %a{:href => "#"}
-            %span Menu
-      %section.top-bar-section
-        %ul.left
-          %li.divider
-          %li.active= link_to "Blogs", posts_path
-          %li.divider
-          %li= link_to "Portafolio", posts_path
-          %li.divider
-          %li.has-dropdown
-            %a{:href => "#"} Main Item 3
-            %ul.dropdown
-              %li.has-dropdown
-                %a{:href => "#"} Dropdown Level 1a
-                %ul.dropdown
-                  %li
-                    %label Dropdown Level 2 Label
-                  %li
-                    %a{:href => "#"} Dropdown Level 2a
-                  %li.has-dropdown
-                    %a{:href => "#"} Dropdown Level 2c
-                    %ul.dropdown
-                      %li
-                        %label Dropdown Level 3 Label
-                      %li
-                        %a{:href => "#"} Dropdown Level 3a
-                      %li
-                        %a{:href => "#"} Dropdown Level 3b
-                      %li.divider
-                      %li
-                        %a{:href => "#"} Dropdown Level 3c
-                  %li
-                    %a{:href => "#"} Dropdown Level 2d
-              %li
-                %a{:href => "#"} Dropdown Level 1b
-              %li
-                %a{:href => "#"} Dropdown Level 1c
-              %li.divider
-              %li
-                %a{:href => "#"} Dropdown Level 1d
-          %li.divider
-        / Right Nav Section
-        %ul.right
-          %li.divider.hide-for-small
-          %li.has-dropdown
-            %a{:href => "#"} Contacto
-
-
+    = render "layouts/nav"
     .container
       .row
         .large-12.columns
