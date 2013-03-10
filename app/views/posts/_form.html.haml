@@ -3,6 +3,7 @@
 
   .form-inputs
     = f.input :title
+    = f.input :link, :hint=> "'#' para no apuntar a nada, 'http://ejemplo.com' para un sitio externo"
     = f.input :body
     = f.input :parent_id, :collection => Post.select_options
 

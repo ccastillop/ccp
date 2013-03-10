@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
-  attr_accessible :body, :title, :parent_id
+  attr_accessible :body, :title, :parent_id, :link
   validates_presence_of :title, :body
+  validates_format_of :link, :with => URI::regexp, :allow_blank => true,
+                      :unless => Proc.new { |post| post.link == "#" }
   
   has_ancestry
   

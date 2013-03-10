@@ -1,0 +1,11 @@
+.field_with_hint{
+  margin-bottom: 1em;
+  input{
+    margin-bottom: 0em;
+  }
+  .hint{
+    font-size: 0.8em;
+    font-style: italic;
+    color: #666;
+  }
+}
