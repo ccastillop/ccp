@@ -2,7 +2,7 @@ module Mercury
   module Authentication
 
     def can_edit?
-      authenticated?
+      true
     end
 
   end

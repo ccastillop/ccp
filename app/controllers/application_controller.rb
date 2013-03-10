@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  helper_method :authenticated?
   include Mercury::Authentication
   
   def authenticate
@@ -11,5 +12,5 @@ class ApplicationController < ActionController::Base
   def authenticated?
     @authenticated
   end
-  helper_method :authenticated?
+
 end
