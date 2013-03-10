@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.input :title
-    = f.input :link, :hint=> "'#' para no apuntar a nada (menu), o 'http://ejemplo.com' para un sitio externo, o dejar en blanco"
+    = f.input :link, :hint=> "En caso el menu apunte a un link externo como 'http://ejemplo.com' ó '#' para no apuntar a nada"
     = f.input :body
     = f.input :parent_id, :collection => Post.select_options
 

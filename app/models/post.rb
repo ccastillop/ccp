@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   attr_accessible :body, :title, :parent_id, :link
-  validates_presence_of :title, :body
+  validates_presence_of :title
+  validates_presence_of :body, :unless => Proc.new { |post| post.link.present? }
   validates_format_of :link, :with => URI::regexp, :allow_blank => true,
                       :unless => Proc.new { |post| post.link == "#" }
   
