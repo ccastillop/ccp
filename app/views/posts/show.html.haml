@@ -3,7 +3,8 @@
 
 %h1= @post.title
 
-%p= @post.body
+#post_body{:"data-mercury"=>"full"}
+  = @post.body
 
 %p
   = link_to 'Edit', edit_post_path(@post)

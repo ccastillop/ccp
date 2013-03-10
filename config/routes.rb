@@ -1,4 +1,11 @@
 Ccp::Application.routes.draw do
+
+  namespace :mercury do
+    resources :images
+  end
+
+  mount Mercury::Engine => '/'
+
   resources :posts
   root to:"posts#index"
 

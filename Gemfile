@@ -22,6 +22,9 @@ gem 'simple_form'
 
 gem 'ancestry'
 
+gem 'mercury-rails'
+gem 'paperclip'
+
 group :development, :test do
   gem 'capistrano'
   gem 'rvm-capistrano'
