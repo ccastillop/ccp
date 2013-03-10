@@ -57,7 +57,9 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-
+    if params[:content][:post_body][:value].present?
+      params[:post][:body] = params[:content][:post_body][:value]
+    end
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
