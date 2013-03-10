@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with :name => "ccp", :password => "Lima1972", :except => [:show, :index]
+  before_filter :authenticate, :except => [:show, :index]
   
   def index
     @posts = Post.all
