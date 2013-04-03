@@ -38,6 +38,11 @@ namespace :deploy do
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
     sudo "service nginx restart"
+    #poniendo unicorn en el init.d para inicio automatico
+    put File.read("config/unicorn_init.sh"), "#{shared_path}/config/unicorn_init.sh"
+    sudo "cp #{shared_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    sudo "chmod +x /etc/init.d/unicorn_#{application}"
+    sudo "update-rc.d unicorn_#{application} defaults"
   end
 
   task :symlink_config, roles: :app do
