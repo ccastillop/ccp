@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      @authenticated = username == "ccp" && password == "Lima1972"
+      @authenticated = username == ENV["BLOG_USERNAME"] && password == ENV["BLOG_PASSWORD"]
     end
   end
 

@@ -45,10 +45,13 @@ namespace :deploy do
     sudo "cp #{shared_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     sudo "chmod +x /etc/init.d/unicorn_#{application}"
     sudo "update-rc.d unicorn_#{application} defaults"
+    #variables de configuracion
+    put File.read("config/application.example.yml"), "#{shared_path}/config/application.yml"
   end
 
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml"
     #run "ln -nfs #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
   end
 
