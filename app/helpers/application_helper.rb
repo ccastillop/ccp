@@ -51,15 +51,22 @@ GA
       end
     end
     
-    def truncate_words(text = "-", length = 32, link=nil, end_string = ' ... ')
+    def truncate_words(text = "-", options={})
+      defaults = {length: 32, link: nil, end_string:' ... '}
+      
+      options = defaults.merge options
+      length = options[:length]
+      end_string = options[:end_string]
+      link = options[:link]
+      
       text ||= ""
       #text = Sanitize.clean(text)
       text = strip_tags(text)
       text = text.gsub("&nbsp;"," ")
       text = text.gsub("&#13;"," ")
       words = text.split()
+      words << link if link
       words = words[0..(length-1)].join(' ') + (words.count > length ? end_string : '')
-      words = words + link if link
       words = words.try(:html_safe)
     end
 

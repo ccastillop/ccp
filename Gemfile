@@ -24,6 +24,7 @@ gem 'ancestry'
 
 gem 'mercury-rails'
 gem 'paperclip'
+gem 'kaminari'
 
 group :development, :test do
   gem 'capistrano'

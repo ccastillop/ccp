@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :authenticate, :except => [:show, :index]
   
   def index
-    @posts = Post.all
+    @posts = Post.order("id desc").page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
