@@ -1,5 +1,3 @@
-ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
-
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
@@ -19,6 +17,7 @@ end
 
 module Ccp
   class Application < Rails::Application
+    ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
