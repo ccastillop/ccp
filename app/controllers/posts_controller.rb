@@ -2,7 +2,9 @@ class PostsController < ApplicationController
   before_filter :authenticate, :except => [:show, :index]
   
   def index
-    @posts = Post.order("id desc").page params[:page]
+    @posts = Post.order("id desc")
+    @posts = @posts.articulos unless authenticated?
+    @posts = @posts.page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -57,7 +59,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-    if params[:content][:post_body][:value].present?
+    if params[:content].present? and params[:content][:post_body][:value].present?
       params[:post][:body] = params[:content][:post_body][:value]
     end
     respond_to do |format|

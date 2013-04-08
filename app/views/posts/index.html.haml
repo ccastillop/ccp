@@ -3,8 +3,12 @@
 - @posts.each do |post|
   
   %h3= link_to post.title, post
+  %small= post.link if post.link
   %small
     Publicado el
     = l post.created_at, format: :chico
   %p= truncate_words post.body, link: link_to( "más", post)
 
+  - if authenticated?
+    %p
+      = link_to 'Edit', edit_post_path(post)

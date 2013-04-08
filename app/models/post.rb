@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   
   has_ancestry
   
+  scope :articulos, where("length(link)<1")
+  
   def to_s
     title
   end
