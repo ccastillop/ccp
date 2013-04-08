@@ -25,6 +25,7 @@ gem 'ancestry'
 gem 'mercury-rails'
 gem 'paperclip'
 gem 'kaminari'
+gem "ckeditor"
 
 group :development, :test do
   gem 'capistrano'
