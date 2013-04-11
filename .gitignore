@@ -18,4 +18,5 @@
 config/database.yml
 public/uploads
 public/system
+public/ckeditor_assets
 /config/application.yml
