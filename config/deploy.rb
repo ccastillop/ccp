@@ -15,7 +15,7 @@ server "softwarebajodemanda.com", :web, :app, :db, primary: true
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-set :rvm_ruby_string, '1.9.3'
+set :rvm_ruby_string, '1.9.3-p392'
 
 require "bundler/capistrano"
 require 'capistrano-unicorn'
