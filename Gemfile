@@ -29,7 +29,7 @@ gem "ckeditor"
 
 group :development, :test do
   gem 'capistrano'
-  gem 'rvm-capistrano'
+  gem 'capistrano-rbenv'
   gem 'capistrano-unicorn', :require => false
   gem "annotate"
 end

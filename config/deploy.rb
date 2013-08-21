@@ -19,7 +19,8 @@ set :rvm_ruby_string, '1.9.3-p392'
 
 require "bundler/capistrano"
 require 'capistrano-unicorn'
-require "rvm/capistrano"
+require "capistrano-rbenv"
+set :rbenv_ruby_version, "1.9.3-p392"
 
 before 'deploy:setup', 'rvm:install_rvm'   # install RVM
 before 'deploy:setup', 'rvm:install_ruby'
