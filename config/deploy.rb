@@ -10,7 +10,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 server "cristiancastillo.com", :web, :app, :db, primary: true
-server "softwarebajodemanda.com", :web, :app, :db, primary: true
+#server "softwarebajodemanda.com", :web, :app, :db, primary: true
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
@@ -21,9 +21,6 @@ require "bundler/capistrano"
 require 'capistrano-unicorn'
 require "capistrano-rbenv"
 set :rbenv_ruby_version, "1.9.3-p392"
-
-before 'deploy:setup', 'rvm:install_rvm'   # install RVM
-before 'deploy:setup', 'rvm:install_ruby'
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 

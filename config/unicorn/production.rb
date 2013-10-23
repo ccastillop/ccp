@@ -6,7 +6,7 @@
 app_path = "/home/ccastillo/apps/ccp/current"
 
 # Set unicorn options
-worker_processes 2
+worker_processes 1
 preload_app true
 timeout 180
 listen "#{app_path}/tmp/pids/unicorn.sock"
