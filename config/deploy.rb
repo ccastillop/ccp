@@ -9,7 +9,7 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
-#server "cristiancastillo.com", :web, :app, :db, primary: true
+server "cristiancastillo.com", :web, :app, :db, primary: true
 server "softwarebajodemanda.com", :web, :app, :db, primary: true
 
 default_run_options[:pty] = true
