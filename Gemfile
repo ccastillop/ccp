@@ -22,10 +22,13 @@ gem 'simple_form'
 
 gem 'ancestry'
 
-gem 'mercury-rails'
-gem 'paperclip'
+#gem 'mercury-rails'
+#gem 'paperclip'
 gem 'kaminari'
 gem "ckeditor"
+
+gem "carrierwave"
+gem "mini_magick"
 
 group :development, :test do
   gem 'capistrano'

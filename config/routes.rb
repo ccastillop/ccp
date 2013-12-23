@@ -6,12 +6,9 @@ Ccp::Application.routes.draw do
     resources :images
   end
 
-  mount Mercury::Engine => '/'
-
   resources :posts
   root to:"posts#index"
   
-  mount Ckeditor::Engine => "/ckeditor"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
