@@ -15,12 +15,10 @@ server "softwarebajodemanda.com", :web, :app, :db, primary: true
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-set :rvm_ruby_string, '1.9.3-p392'
-
 require "bundler/capistrano"
 require 'capistrano-unicorn'
 require "capistrano-rbenv"
-set :rbenv_ruby_version, "1.9.3-p392"
+set :rbenv_ruby_version, "1.9.3-p484"
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
