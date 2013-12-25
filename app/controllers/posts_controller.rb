@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class PostsController < ApplicationController
   before_filter :authenticate, :except => [:show, :index]
   

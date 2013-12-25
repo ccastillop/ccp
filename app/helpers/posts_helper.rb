@@ -1,3 +1,4 @@
+# encoding: utf-8
 module PostsHelper
   def link_to_post(post)
     if post.link.present?

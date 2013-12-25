@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Post < ActiveRecord::Base
   #attr_accessible :body, :title, :parent_id, :link
   validates_presence_of :title
