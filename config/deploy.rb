@@ -25,6 +25,7 @@ after "deploy", "deploy:cleanup" # keep only the last 5 releases
 after "deploy:setup", "deploy:setup_config"
 after "deploy:finalize_update", "deploy:symlink_config"
 before "deploy", "deploy:check_revision"
+after "deploy", "unicorn:restart"
 
 namespace :deploy do
 
