@@ -18,7 +18,7 @@ ssh_options[:forward_agent] = true
 require "bundler/capistrano"
 require 'capistrano-unicorn'
 require "capistrano-rbenv"
-set :rbenv_ruby_version, "1.9.3-p484"
+set :rbenv_ruby_version, "2.0.0-p247"
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
