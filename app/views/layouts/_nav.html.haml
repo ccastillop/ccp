@@ -15,7 +15,7 @@
           = link_to_post root
           - if root.has_children?
             %ul.dropdown
-              - root.children.each do |child|
+              - root.children.order("id desc").each do |child|
                 %li= link_to_post child
                 
       %li.divider
