@@ -29,7 +29,7 @@ gem "carrierwave"
 gem "mini_magick"
 
 group :development, :test do
-  gem 'capistrano'
+  gem 'capistrano',   '~> 2.15.0'
   gem 'capistrano-rbenv'
   gem 'capistrano-unicorn', :require => false
   gem "annotate"
