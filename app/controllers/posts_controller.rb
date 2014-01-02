@@ -4,9 +4,9 @@ class PostsController < ApplicationController
   before_filter :authenticate, :except => [:show, :index]
   
   def index
-    @posts = Post.order("id desc")
+    @posts = Post
     @posts = @posts.articulos unless authenticated?
-    @posts = @posts.page params[:page]
+    @posts = @posts.order("id desc").page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
