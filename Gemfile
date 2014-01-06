@@ -17,6 +17,7 @@ gem 'haml-rails'
 gem 'unicorn'
 
 gem 'simple_form'
+gem 'email_validator'
 
 gem 'ancestry'
 

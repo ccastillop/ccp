@@ -1,5 +1,7 @@
 Ccp::Application.routes.draw do
 
+  resources :contacts
+
   mount Ckeditor::Engine => '/ckeditor'
 
   namespace :mercury do
