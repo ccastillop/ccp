@@ -29,6 +29,8 @@ gem "ckeditor"
 gem "carrierwave"
 gem "mini_magick"
 
+gem 'reverse_captcha'
+
 group :development, :test do
   gem 'capistrano',   '~> 2.15.0'
   gem 'capistrano-rbenv'

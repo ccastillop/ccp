@@ -20,3 +20,5 @@ public/uploads
 public/system
 public/ckeditor_assets
 /config/application.yml
+
+.DS_Store
