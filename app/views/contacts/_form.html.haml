@@ -2,9 +2,9 @@
   = f.error_notification
 
   .form-inputs
+    = f.captcha
     = f.input :name, label: "Nombre"
     = f.input :email
     = f.input :message, as: :text, label: "Mensaje"
-    = f.captcha
   .form-actions
     = f.button :submit
